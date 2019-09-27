@@ -1,6 +1,3 @@
-//Eric Liu
-//111545728
-package connect4r;
 import java.util.Scanner;
 public class c4 {
 	public static void main(String[] args) {
@@ -68,6 +65,8 @@ public class c4 {
 		}while(t==true);
 	}
 	
+	//Checks if there is a row of 4 R on the board (vertical, horizontal, ascending diagonal, and descending diagonal. 
+	//If there is boolean w is changed to True, thus Red wins.
 	public static boolean RW(String[][] c4) {
 		boolean w = false;
 		
@@ -95,7 +94,7 @@ public class c4 {
 					break;
 				}}}
 		
-		//other diagonal
+		//descending diagonal
 		for(int i=5; i>=3;i--) {
 			for(int j = 0; j<4;j++) {
 				if(c4[i][j] == "R" && c4[i-1][j+1] == "R" && c4[i-2][j+2] == "R" && c4[i-3][j+3] == "R") {
@@ -105,6 +104,8 @@ public class c4 {
 		return w;
 	}
 	
+	//Checks if there is a row of 4 Y on the board (vertical, horizontal, ascending diagonal, and descending diagonal. 
+	//If there is boolean w is changed to True, thus Yellow wins.
 	public static boolean YW(String[][] c4) {
 		boolean w = false;
 		
